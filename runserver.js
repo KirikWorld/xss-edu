@@ -2,7 +2,7 @@ const manager = require("./core/manager");
 const port = 3000;
 
 manager.app.listen(
-    port,
+    (process.env.PORT || 5000),
     console.log(
         "TIP: can use command 'nodemon runserver' to enable auto reboot\n" +
             `Project was found on "${manager.base_dir}"\n` +
