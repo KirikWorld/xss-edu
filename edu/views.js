@@ -7,6 +7,10 @@ function index(req, res){
 }
 
 function onReg(req, res){
+    if(req.query.login.match(/[<>]/gm)){res.send(`<h1>Welcome, ${req.query.login}</h1>
+    <button onclick=(window.location.replace("/"))>Back</button>
+    <p>flag{simpleXSS}</p>
+    `)}
     res.send(`<h1>Welcome, ${req.query.login}</h1>
     <button onclick=(window.location.replace("/"))>Back</button>
     `)
